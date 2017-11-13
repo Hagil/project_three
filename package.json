@@ -1,0 +1,28 @@
+{
+  "name": "project_three",
+  "version": "1.0.0",
+  "description": "new site for project_three",
+  "main": "server.js",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "mongodb": "^2.2.33",
+    "passport": "^0.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hagil/project_three.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hagil/project_three/issues"
+  },
+  "homepage": "https://github.com/Hagil/project_three#readme"
+}
