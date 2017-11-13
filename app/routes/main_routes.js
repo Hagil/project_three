@@ -17,6 +17,12 @@ module.exports = function (app, passport) {
             req.logout();
             res.redirect('/');
         });
+
+        // route for to do list
+        app.get('/list', function (req, res) {
+            res.render('list.ejs')
+            });
+        
     
         // PROFILE SECTION =====================
         // we will want this protected so you have to be logged in to visit
