@@ -12,7 +12,7 @@ var session = require('express-session');
 
 var configDB = require('./config/database.js');
 
-// configuration ===============================================================
+// // configuration ===============================================================
 mongoose.connect(configDB.url, {
     useMongoClient: true
 }); // connect to our database
@@ -23,7 +23,6 @@ require('./config/passport/main_passport')(passport); // pass passport for confi
 
 // set up our express application
 app.use(express.static('public'));
-app.use(express.static('files'));
 app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser.json()); // get information from html forms
@@ -36,12 +35,16 @@ app.set('view engine', 'ejs'); // set up ejs for templating
 app.use(session({
     secret: 'ballislife'
 })); // session secret
-app.use(passport.initialize());
-app.use(passport.session()); // persistent login sessions
+ app.use(passport.initialize());
+ app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
 // routes ======================================================================
 require('./app/routes/main_routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
 
-app.listen(port);
-console.log('listening on port ' + port);
+
+
+app.listen(port, function(){
+    console.log('listening on port ' + port);
+
+});
