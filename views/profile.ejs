@@ -60,12 +60,37 @@
                                         <strong>name</strong>:
                                         <%= user.facebook.name %>
                         </p>
-                        <a href="/unlink/facebook" class="btn btn-primary">Unlink</a>
+                        <a href="/unlink/facebook" class="btn btn-success">Unlink</a>
                         <% } else { %>
-                            <a href="/connect/facebook" class="btn btn-primary">Connect Facebook</a>
+                            <a href="/connect/facebook" class="btn btn-success">Connect Facebook</a>
                             <% } %>
                 </div>
             </div>   
+
+            <div class="col-sm-6">
+                    <div class="well">
+                        <h3 class="text-primary">
+                            <span class="fa fa-sticky-note"></span> Evernote</h3>
+                        <% if (user.evernote.token) { %>
+                            <p>
+                                <strong>id</strong>:
+                                <%= user.evernote.id %>
+                                    <br>
+                                    <strong>token</strong>:
+                                    <%= user.evernote.token %>
+                                        <br>
+                                        <strong>email</strong>:
+                                        <%= user.evernote.email %>
+                                            <br>
+                                            <strong>name</strong>:
+                                            <%= user.evernote.name %>
+                            </p>
+                            <a href="/unlink/evernote" class="btn btn-primary">Unlink</a>
+                            <% } else { %>
+                                <a href="/connect/evernote" class="btn btn-primary">Connect Evernote</a>
+                                <% } %>
+                    </div>
+                </div>   
         </div>
 </body>
 
