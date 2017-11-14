@@ -20,7 +20,8 @@ module.exports = function (app, passport) {
 
         // route for to do list
         app.get('/list', function (req, res) {
-            res.render('list.ejs')
+            var user= {name:"Hagil's"};
+            res.render('list.ejs', user);
             });
         
     
@@ -36,7 +37,7 @@ module.exports = function (app, passport) {
     
         //locally
         app.get('/connect/local', function (req, res) {
-            res.render('connect-local.ejs', {
+            res.render('connect_local.ejs', {
                 message: req.flash('loginMessage')
             });
         });

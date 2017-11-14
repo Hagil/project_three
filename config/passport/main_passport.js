@@ -11,6 +11,9 @@ module.exports = function (passport) {
     var facebook_passport = require('./facebook_passport')
     facebook_passport(User, passport, configAuth);
 
+    var evernote_passport = require('./evernote_passport')
+    evernote_passport(User, passport, configAuth);
+
 
     // =========================================================================
     // passport session setup ==================================================
