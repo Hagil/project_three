@@ -7,14 +7,14 @@ function evernote_passport(User, passport) {
 
     passport.use(new evernoteStrategy({
             // pull in our app id and secret from our auth.js file
-            clientID: configAuth.evernoteAuth.clientID,
-            clientSecret: configAuth.evernoteAuth.clientSecret,
+            consumerKey: configAuth.evernoteAuth.consumerKey,
+            consumerSecret: configAuth.evernoteAuth.consumerSecret,
             callbackURL: configAuth.evernoteAuth.callbackURL,
             profileFields: configAuth.evernoteAuth.profileFields,
             passReqToCallback: true
         },
         // evernote will send back the token and profile
-        function (req, token, refreshToken, profile, done) {
+        function (req, token, tokenSecret, profile, done) {
             // asynchronous
             process.nextTick(function () {
                 if (!req.user) {

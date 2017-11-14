@@ -11,6 +11,9 @@ module.exports = function (app, passport) {
     
         var facebook_routes = require('./facebook_routes');
         facebook_routes(app, passport);
+
+        var evernote_routes = require('./evernote_routes');
+        evernote_routes(app, passport);
     
         // route for logging out
         app.get('/logout', function (req, res) {
@@ -68,6 +71,15 @@ module.exports = function (app, passport) {
         app.get('/unlink/facebook', function (req, res) {
             var user = req.user;
             user.facebook.token = undefined;
+            user.save(function (err) {
+                res.redirect('/profile');
+            });
+        });
+
+           // evernote -------------------------------
+           app.get('/unlink/evernote', function (req, res) {
+            var user = req.user;
+            user.evernote.token = undefined;
             user.save(function (err) {
                 res.redirect('/profile');
             });
