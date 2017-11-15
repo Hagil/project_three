@@ -14,6 +14,42 @@ var configDB = require('./config/database.js');
 var http = require('http');
 var path = require('path');
 
+app.use(function(req, res, next) {
+    req.db = {};
+    req.db.tasks = db.collection('tasks');
+    next();
+})
+app.set('views', __dirname + '/list_views');
+
+app.use(function(req, res, next) {
+  res.locals._csrf = req.session._csrf;
+  return next();
+})
+
+// development only
+if ('development' == app.get('env')) {
+  app.use(express.errorHandler());
+}
+app.param('task_id', function(req, res, next, taskId) {
+  req.db.tasks.findById(taskId, function(error, task){
+    if (error) return next(error);
+    if (!task) return next(new Error('Task is not found.'));
+    req.task = task;
+    return next();
+  });
+});
+
+app.get('/', list_routes.index);
+app.get('/tasks', tasks.list);
+app.post('/tasks', tasks.markAllCompleted)
+app.post('/tasks', tasks.add);
+app.post('/tasks/:task_id', tasks.markCompleted);
+app.del('/tasks/:task_id', tasks.del);
+app.get('/tasks/completed', tasks.completed);
+
+app.all('*', function(req, res){
+  res.send(404);
+});
 
 // // configuration ===============================================================
 mongoose.connect(configDB.url, {
