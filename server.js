@@ -4,14 +4,15 @@ var port = process.env.PORT || 8080;
 var mongoose = require('mongoose');
 var passport = require('passport');
 var flash = require('connect-flash');
-
 var morgan = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
-
 var configDB = require('./config/database.js');
 
+//to do list 
+var http = require('http');
+var path = require('path');
 
 
 // // configuration ===============================================================
@@ -19,7 +20,6 @@ mongoose.connect(configDB.url, {
     useMongoClient: true
 }); // connect to our database
 mongoose.Promise = require('bluebird');
-
 
 require('./config/passport/main_passport')(passport); // pass passport for configuration
 
