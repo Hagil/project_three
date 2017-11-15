@@ -14,11 +14,23 @@ var userSchema = mongoose.Schema({
         email        : String,
         name         : String
     },
-    dropbox          : {
+    twitter          : {
+        id           : String,
+        token        : String,
+        displayName  : String,
+        username     : String
+    },
+    google           : {
         id           : String,
         token        : String,
         email        : String,
         name         : String
+    },
+    instagram        : {
+        id           : String,
+        token        : String,
+        displayName  : String,
+        username     : String
     }
 });
 

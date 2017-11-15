@@ -11,8 +11,14 @@ module.exports = function (passport) {
     var facebook_passport = require('./facebook_passport')
     facebook_passport(User, passport, configAuth);
 
-    var dropbox_passport = require('./dropbox_passport')
-    dropbox_passport(User, passport, configAuth);
+    var twitter_passport = require('./twitter_passport')
+    twitter_passport(User, passport, configAuth);
+    
+    var google_passport = require('./google_passport')
+    google_passport(User, passport, configAuth);
+    
+    var instagram_passport = require('./instagram_passport')
+    instagram_passport(User, passport, configAuth);
 
 
     // =========================================================================

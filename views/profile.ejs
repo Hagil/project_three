@@ -11,7 +11,8 @@
     <div class="container">
 
         <div class="page-header text-center">
-            <h1><span class="fa fa-anchor"></span> Profile Page</h1>
+            <h1>
+                <span class="fa fa-anchor"></span> Profile Page</h1>
             <a href="/logout" class="btn btn-default btn-sm">Logout</a>
             <a href="/list" class="btn btn-default btn-sm">To Do List</a>
         </div>
@@ -65,32 +66,83 @@
                             <a href="/connect/facebook" class="btn btn-primary">Connect Facebook</a>
                             <% } %>
                 </div>
-            </div>   
+            </div>
 
             <div class="col-sm-6">
-                    <div class="well">
-                        <h3 class="text-primary">
-                            <span class="fa fa-dropbox"></span> Dropbox</h3>
-                        <% if (user.dropbox.token) { %>
-                            <p>
-                                <strong>id</strong>:
-                                <%= user.dropbox.id %>
+                <div class="well">
+                    <h3 class="text-info">
+                        <span class="fa fa-twitter"></span> Twitter</h3>
+                    <% if (user.twitter.token) { %>
+                        <p>
+                            <strong>id</strong>:
+                            <%= user.twitter.id %>
+                                <br>
+                                <strong>token</strong>:
+                                <%= user.twitter.token %>
                                     <br>
-                                    <strong>token</strong>:
-                                    <%= user.dropbox.token %>
+                                    <strong>username</strong>:
+                                    <%= user.twitter.username %>
                                         <br>
-                                        <strong>email</strong>:
-                                        <%= user.dropbox.email %>
-                                            <br>
-                                            <strong>name</strong>:
-                                            <%= user.dropbox.name %>
-                            </p>
-                            <a href="/unlink/dropbox" class="btn btn-success">Unlink</a>
-                            <% } else { %>
-                                <a href="/connect/dropbox" class="btn btn-success">Connect Dropbox</a>
-                                <% } %>
-                    </div>
-                </div>   
+                                        <strong>displayName</strong>:
+                                        <%= user.twitter.displayName %>
+                        </p>
+                        <a href="/unlink/twitter" class="btn btn-info">Unlink</a>
+                        <% } else { %>
+                            <a href="/connect/twitter" class="btn btn-info">Connect Twitter</a>
+                            <% } %>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="well">
+                    <h3 class="text-danger">
+                        <span class="fa fa-google-plus"></span> Google</h3>
+                    <% if (user.google.token) { %>
+                        <p>
+                            <strong>id</strong>:
+                            <%= user.google.id %>
+                                <br>
+                                <strong>token</strong>:
+                                <%= user.google.token %>
+                                    <br>
+                                    <strong>email</strong>:
+                                    <%= user.google.email %>
+                                        <br>
+                                        <strong>name</strong>:
+                                        <%= user.google.name %>
+                        </p>
+                        <a href="/unlink/google" class="btn btn-danger">Unlink</a>
+                        <% } else { %>
+                            <a href="/connect/google" class="btn btn-danger">Connect Google</a>
+                            <% } %>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="well">
+                    <h3 class="text-primary">
+                        <span class="fa fa-instagram"></span> Instagram</h3>
+                    <% if (user.instagram.token) { %>
+                        <p>
+                            <strong>id</strong>:
+                            <%= user.instagram.id %>
+                                <br>
+                                <strong>username</strong>:
+                                <%= user.instagram.token %>
+                                    <br>
+                                    <strong>fullName</strong>:
+                                    <%= user.instagram.displayName %>
+                                        <br>
+                                        <strong>profilePic</strong>:
+                                        <%= user.instagram.username %>
+                        </p>
+                        <a href="/unlink/instagram" class="btn btn-success">Unlink</a>
+                        <% } else { %>
+                            <a href="/connect/instagram" class="btn btn-success">Connect Instagram</a>
+                            <% } %>
+                </div>
+
+            </div>
         </div>
 </body>
 
