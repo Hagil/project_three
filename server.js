@@ -12,6 +12,16 @@ var session = require('express-session');
 
 var configDB = require('./config/database.js');
 
+var Dropbox = require('dropbox');
+var dbx = new Dropbox({ accessToken: 'JbgvP_oAd2QAAAAAAAAmS9YAiZF8HD_zjyDWBw4z_nxesCGpOThPc_kWpsagebIr' });
+dbx.filesListFolder({path: ''})
+  .then(function(response) {
+    console.log(response);
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+
 // // configuration ===============================================================
 mongoose.connect(configDB.url, {
     useMongoClient: true
