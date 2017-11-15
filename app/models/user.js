@@ -14,7 +14,7 @@ var userSchema = mongoose.Schema({
         email        : String,
         name         : String
     },
-    evernote         : {
+    dropbox          : {
         id           : String,
         token        : String,
         email        : String,

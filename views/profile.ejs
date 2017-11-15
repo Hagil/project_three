@@ -60,9 +60,9 @@
                                         <strong>name</strong>:
                                         <%= user.facebook.name %>
                         </p>
-                        <a href="/unlink/facebook" class="btn btn-success">Unlink</a>
+                        <a href="/unlink/facebook" class="btn btn-primary">Unlink</a>
                         <% } else { %>
-                            <a href="/connect/facebook" class="btn btn-success">Connect Facebook</a>
+                            <a href="/connect/facebook" class="btn btn-primary">Connect Facebook</a>
                             <% } %>
                 </div>
             </div>   
@@ -70,24 +70,24 @@
             <div class="col-sm-6">
                     <div class="well">
                         <h3 class="text-primary">
-                            <span class="fa fa-sticky-note"></span> Evernote</h3>
-                        <% if (user.evernote.token) { %>
+                            <span class="fa fa-dropbox"></span> Dropbox</h3>
+                        <% if (user.dropbox.token) { %>
                             <p>
                                 <strong>id</strong>:
-                                <%= user.evernote.id %>
+                                <%= user.dropbox.id %>
                                     <br>
                                     <strong>token</strong>:
-                                    <%= user.evernote.token %>
+                                    <%= user.dropbox.token %>
                                         <br>
                                         <strong>email</strong>:
-                                        <%= user.evernote.email %>
+                                        <%= user.dropbox.email %>
                                             <br>
                                             <strong>name</strong>:
-                                            <%= user.evernote.name %>
+                                            <%= user.dropbox.name %>
                             </p>
-                            <a href="/unlink/evernote" class="btn btn-primary">Unlink</a>
+                            <a href="/unlink/dropbox" class="btn btn-success">Unlink</a>
                             <% } else { %>
-                                <a href="/connect/evernote" class="btn btn-primary">Connect Evernote</a>
+                                <a href="/connect/dropbox" class="btn btn-success">Connect Dropbox</a>
                                 <% } %>
                     </div>
                 </div>   

@@ -6,10 +6,10 @@ module.exports = {
             'callbackURL': 'http://localhost:8080/auth/facebook/callback',
             'profileFields': ["email", "displayName", "name", "photos"]
         },
-        'evernoteAuth': {
-            'consumerKey': 'hagil317', // your App ID
-            'consumerSecret': '0e571fed46b8f75b', // your App Secret
-            'callbackURL': 'http://localhost:8080/auth/evernote/callback',
-            'profileFields': ["email", "displayName", "name", "photos"]
+        'dropboxAuth': {
+            'appKey': 'j0jqsbw55bhfqd7', // your App ID
+            'appSecret': 'mg03aw3cfwp4shw', // your App Secret
+            'callbackURL': 'http://localhost:8080/auth/dropbox/callback'
+            // 'profileFields': ["email", "displayName", "name", "photos"]
         }
     };

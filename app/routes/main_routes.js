@@ -12,8 +12,8 @@ module.exports = function (app, passport) {
         var facebook_routes = require('./facebook_routes');
         facebook_routes(app, passport);
 
-        var evernote_routes = require('./evernote_routes');
-        evernote_routes(app, passport);
+        var dropbox_routes = require('./dropbox_routes');
+        dropbox_routes(app, passport);
     
         // route for logging out
         app.get('/logout', function (req, res) {
@@ -76,10 +76,10 @@ module.exports = function (app, passport) {
             });
         });
 
-           // evernote -------------------------------
-           app.get('/unlink/evernote', function (req, res) {
+           // dropbox -------------------------------
+           app.get('/unlink/dropbox', function (req, res) {
             var user = req.user;
-            user.evernote.token = undefined;
+            user.dropbox.token = undefined;
             user.save(function (err) {
                 res.redirect('/profile');
             });
