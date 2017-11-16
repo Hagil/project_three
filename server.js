@@ -14,6 +14,9 @@ var configDB = require('./config/database.js');
 var http = require('http');
 var path = require('path');
 var methodOverride = require('method-override');
+var errorhandler = require('errorhandler');
+var routes = require('./list_routes');
+var tasks = require('./list_routes/tasks');
 
 app.use(function(req, res, next) {
     req.db = {};
@@ -29,7 +32,7 @@ app.use(function(req, res, next) {
 
 // development only
 if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
+  app.use(errorhandler);
 }
 app.param('task_id', function(req, res, next, taskId) {
   req.db.tasks.findById(taskId, function(error, task){
@@ -68,7 +71,12 @@ app.use(bodyParser.json()); // get information from html forms
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-app.set('view engine', 'ejs'); // set up ejs for templating
+
+var engines = require('consolidate');
+
+app.engine('jade', engines.jade);
+app.engine('html', engines.ejs);
+app.set('view engine', 'pug'); // set up ejs and pug for templating
 
 // required for passport
 app.use(session({
