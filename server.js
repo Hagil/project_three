@@ -13,6 +13,7 @@ var configDB = require('./config/database.js');
 //to do list 
 var http = require('http');
 var path = require('path');
+var methodOverride = require('method-override');
 
 app.use(function(req, res, next) {
     req.db = {};

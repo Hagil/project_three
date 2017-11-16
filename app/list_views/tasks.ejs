@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+        <link rel="stylesheet" href="css/style.css">
+        <title>To Do List</title>
+</head>
+
+<body>
+    <div class="menu"></div>
+    <h2>Menu</h2>
+    <ul class="nav nav-pills"></ul>
+    <li></li>
+    <a href="/">Home</a>
+    <li class="active"></li>
+    <a href="/tasks">Todo List</a>
+    <li></li>
+    <a href="/tasks/completed">Completed</a>
+    <h1>To Do List</h1>
+
+    <div class="list"></div>
+    <div class="item add-task"></div>
+    <div class="action"></div>
+    <form action="/tasks" method="post"></form>
+    <input type="hidden" value="true" name="all_done" />
+    <input type="hidden" name="_csrf" />
+    <input class="btn btn-success btn-xs" type="submit" value="all done" />
+    <form action="/tasks" method="post"></form>
+    <input type="hidden" name="_csrf" />
+    <div class="name"></div>
+    <input type="text" name="name" placeholder="Add a new task" />
+    <div class="delete"></div>
+    <input class="btn btn-primary btn-sm" type="submit" value="add" />
+
+    
+
+</body>
+
+</html>
