@@ -1,0 +1,41 @@
+body {
+
+text-align: center;
+
+}
+
+* {
+    box-sizing: border-box;
+}
+.header {
+    background-color: #36c1f4;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+.header:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+form {
+padding-top: 30px;
+
+}
+
+table {
+    padding-top: 25px;
+}
+
+footer {
+    text-transform: uppercase;
+    margin-top: 50px;
+    padding: 0 20px;
+    background-color: white;
+    color: black;
+    font-size: 14px;
+    letter-spacing: .08em;
+    font-weight: 800;
+    text-align: center;
+}

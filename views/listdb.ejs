@@ -4,32 +4,34 @@
 <head>
 
     <% include ../partials/head %>
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/list.css">
         <script src="listjs.js"></script>
         <title>To Do List</title>
 </head>
 
 <body>
-    <h1>My todo list</h1>
-
+    <div id="myDIV" class="header">
+        <h2>Hagil's To Do List</h2>
+    </div>
     <form action="/create_task" method="post">
         <input type="text" name="task">
         <input type="date" name="date">
         <input type="submit" value="create new task">
     </form>
 
-    <table>
+    <table id="task_list" class="table">
         <thead>
             <tr>
-                <th>task</th>
-                <th>date</th>
-                <th>completed</th>
+                <th>Task</th>
+                <th>Date</th>
+                <th>Completed</th>
             </tr>
         </thead>
         <tbody>
             <!-- use query to fill this? -->
         </tbody>
     </table>
+    <% include ../partials/footer %>
 </body>
 
 </html>

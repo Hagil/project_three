@@ -21,6 +21,9 @@ module.exports = function (app, passport) {
     var google_routes = require('./google_routes');
     google_routes(app, passport);
 
+    var list_routes = require('./list_routes');
+    list_routes(app);
+
 
     // route for logging out
     app.get('/logout', function (req, res) {
